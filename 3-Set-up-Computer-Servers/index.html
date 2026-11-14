@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Server Setup – PC Tech Lab Guided Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/player.css">
+<style>
+body{overflow:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:1.4rem 1rem 3rem}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:end;margin:1rem 0 1.6rem}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:.3rem 0 0}
+.hero .pill{display:inline-block;background:var(--tag);color:var(--tag-ink);font-weight:700;padding:.1rem .55rem;border-radius:6px}
+.hero p{font-size:1.1rem;color:var(--ink-2);margin:.3rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.st{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.st .pic{position:relative;aspect-ratio:16/10;background:radial-gradient(ellipse at 50% 35%,var(--stage-a) 0%,var(--stage-b) 90%);border-bottom:1px solid var(--line)}
+.st .pic svg{position:absolute;left:8%;top:8%;width:84%;height:84%}
+.st .num{position:absolute;left:.7rem;top:.7rem;background:var(--tag);color:var(--tag-ink);font-weight:700;padding:.05rem .55rem;border-radius:6px;z-index:1}
+.st .body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.st h2{margin:0;font-size:1.25rem}
+.st details{font-size:.92rem}
+.st details a{text-decoration:none}
+.st ol{margin:.3rem 0 0;padding-left:1.3rem}
+.st .go{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
+.how{margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.how .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.how h3{margin:0 0 .4rem}
+.foot{margin-top:2rem;font-size:.9rem;color:var(--ink-2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem}
+.map{margin-top:2rem}.map table{width:100%;border-collapse:collapse;font-size:.95rem}.map th{text-align:left;padding:.4rem .5rem;background:color-mix(in srgb,var(--ink) 7%,transparent)}.map td{padding:.4rem .5rem;border-top:1px solid var(--line);vertical-align:top}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div><span class="pill">PC Tech Lab · Guided demo</span><h1>Set-up Computer Servers</h1></div>
+    <div><p>Set up the office’s first server, one step at a time: user accounts and folders, addresses, names and printing, then testing, documentation and hand-over.</p>
+      <p>Choose Windows Server 2025 or Ubuntu Server 26.04 LTS. The demo always points to the next thing to do.</p></div>
+  </div>
+  <div class="grid2" id="tracks"></div>
+  <div class="map panel" style="background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem">
+    <h3 style="margin:0 0 .4rem">What this covers</h3>
+    <p style="margin:.2rem 0 .6rem;color:var(--ink-2)">The chapters follow the three parts of the competency <b>Set-up Computer Servers</b>.</p>
+    <table><tr><th>Part of the competency</th><th>Windows Server 2025</th><th>Ubuntu Server 26.04 LTS</th></tr>
+    <tr><td><b>1. Set up user access</b><br><span style="color:var(--ink-2)">user folders, access levels, security check</span></td><td>Users and groups · Shared and home folders (Effective Access check)</td><td>Users and groups · Shared and home folders · Firewall and security check</td></tr>
+    <tr><td><b>2. Configure network services</b><br><span style="color:var(--ink-2)">normal functions, updates and add-ons, services, unplanned events</span></td><td>Name, address and update · Active Directory and DNS · DNS · DHCP · Share the printer · Respond to a problem</td><td>Name, address and update · DNS (BIND) · DHCP (Kea) · Printer (CUPS) · Respond to a problem</td></tr>
+    <tr><td><b>3. Testing, documentation and pre-deployment</b><br><span style="color:var(--ink-2)">pre-deployment, operation and security checks, reports</span></td><td>Test from an office PC · Pre-deployment and report</td><td>Test from an office PC · Pre-deployment and report</td></tr></table>
+  </div>
+  <div class="how">
+    <div class="panel"><h3>Hands-on</h3><p>The learner clicks the highlighted spot to do each step. Nothing else on the screen reacts, so the order is always right.</p></div>
+    <div class="panel"><h3>Slides</h3><p>For teaching from the front. Press <kbd>→</kbd>, <kbd>Space</kbd> or a presentation clicker: the first press does the step, the next press moves on. <kbd>←</kbd> goes back.</p></div>
+    <div class="panel"><h3>Jump anywhere</h3><p>Pick a chapter from the menu at the top. Each chapter starts exactly where the previous one ended. <kbd>F</kbd> gives full screen.</p></div>
+  </div>
+  <p class="foot"><a href="../index.html">← All PC Tech Lab categories</a> · Continues the office network from Station 4. Screens are simplified recreations with the real wording and order of steps. Nothing is saved after you close the browser. Classroom practice material, not a formal qualification.</p>
+</div>
+<script src="shared/art/core.js"></script>
+<script src="shared/art/net.js"></script>
+<script src="shared/art/pc.js"></script>
+<script src="shared/art/detail.js"></script>
+<script src="s5/art.js"></script>
+<script>
+const TR=[
+ {k:'W',title:'Windows Server 2025',art:'server',sub:'Server Manager, Active Directory, DNS, DHCP, file and printer sharing',
+  ch:[['ready','Get the server ready'],['basics','Name, address and update'],['adds','Install Active Directory and DNS'],['dns','Configure DNS'],['dhcp','Configure DHCP'],['users','Users and groups'],['folders','Shared and home folders'],['printer','Share the printer'],['test','Test from an office PC'],['fix','Respond to a problem'],['handover','Pre-deployment and report']]},
+ {k:'U',title:'Ubuntu Server 26.04 LTS',art:'server',sub:'Command line over SSH: users, BIND, Kea, Samba, CUPS and ufw',
+  ch:[['ready','Get the server ready'],['basics','Name, address and update'],['users','Users and groups'],['dns','Configure DNS (BIND)'],['dhcp','Configure DHCP (Kea)'],['shares','Shared and home folders (Samba)'],['printer','Share the printer (CUPS)'],['secure','Firewall and security check'],['test','Test from an office PC'],['fix','Respond to a problem'],['handover','Pre-deployment and report']]},
+];
+const box=document.getElementById('tracks');
+TR.forEach(t=>{
+  const links=t.ch.map(([id,title])=>`<li><a href="server.html#${t.k}:${id}">${title}</a></li>`).join('');
+  box.insertAdjacentHTML('beforeend',`<div class="st"><div class="pic"><span class="num">${t.k==='W'?'Windows':'Ubuntu'}</span>${Art.svg(t.art,{state:{on:true,link:true},cls:'notip'})}</div>
+   <div class="body"><h2>${t.title}</h2><p style="margin:0;color:var(--ink-2)">${t.sub}</p><details><summary>${t.ch.length} chapters</summary><ol>${links}</ol></details>
+   <div class="go"><a class="btn primary" href="server.html#${t.k}">Start ▶</a></div></div></div>`);
+});
+</script>
+</body>
+</html>

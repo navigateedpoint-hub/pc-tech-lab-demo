@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PC Tech Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF0F2;--panel:#FFFFFF;--ink:#16202A;--ink-2:#55616C;--line:#D3D8DD}
+@media (prefers-color-scheme:dark){:root{--bg:#101418;--panel:#1A2027;--ink:#E9EEF2;--ink-2:#A8B3BC;--line:#2E3740}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Atkinson Hyperlegible",system-ui,"Segoe UI",Arial,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:2rem 16px 3rem}
+h1{font-size:clamp(2rem,5vw,3rem);margin:.2rem 0 .3rem;line-height:1.1}
+.lead{color:var(--ink-2);font-size:1.1rem;margin:0 0 1.6rem;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+a.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:16px;overflow:hidden;background:var(--panel);border:1px solid var(--line);transition:transform .15s,box-shadow .15s}
+a.card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.band{padding:1.1rem 1.2rem;color:#fff;min-height:118px;display:flex;flex-direction:column;justify-content:flex-end}
+.band small{font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.band b{font-size:1.35rem;line-height:1.2}
+.c1 .band{background:linear-gradient(135deg,#A8501A,#E07A2E)}
+.c2 .band{background:linear-gradient(135deg,#0D2732,#0A7487)}
+.c3 .band{background:linear-gradient(135deg,#17162A,#4A3EBD)}
+.body{padding:1rem 1.2rem 1.2rem;flex:1;display:flex;flex-direction:column;gap:.4rem}
+.body ul{margin:0;padding-left:1.1rem;color:var(--ink-2)}
+.go{margin-top:auto;padding-top:.6rem;font-weight:700}
+.foot{margin-top:2rem;font-size:.9rem;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="font-weight:700;color:var(--ink-2)">PC Tech Lab · Guided demo</div>
+  <h1>Choose a category</h1>
+  <p class="lead">Each category is a set of step-by-step guided demos. Open a category, then pick a station or a chapter.</p>
+  <div class="grid">
+    <a class="card c1" href="1-Install-and-Configure-Computer-Systems/index.html"><div class="band"><small>Category 1</small><b>Install and Configure Computer Systems</b></div>
+      <div class="body"><ul><li>Station 1: PC Assembly</li><li>Station 2: OS Installation</li></ul><span class="go">Open ▶</span></div></a>
+    <a class="card c2" href="2-Set-up-Computer-Networks/index.html"><div class="band"><small>Category 2</small><b>Set-up Computer Networks</b></div>
+      <div class="body"><ul><li>Station 3: Cable Termination</li><li>Station 4: Network Setup</li></ul><span class="go">Open ▶</span></div></a>
+    <a class="card c3" href="3-Set-up-Computer-Servers/index.html"><div class="band"><small>Category 3</small><b>Set-up Computer Servers</b></div>
+      <div class="body"><ul><li>Station 5: Server Setup (Windows Server 2025 and Ubuntu Server 26.04 LTS)</li></ul><span class="go">Open ▶</span></div></a>
+  </div>
+  <p class="foot">Works offline: open this file from the unzipped folder. Classroom practice material, not a formal qualification.</p>
+</div>
+</body>
+</html>

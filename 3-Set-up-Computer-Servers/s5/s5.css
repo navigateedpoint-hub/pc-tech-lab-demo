@@ -1,0 +1,15 @@
+/* Station 5: job-sheet pages (plan, problem report, hand-over report) */
+.s5-sheet{width:100%;max-width:980px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 6px 24px rgba(0,0,0,.08);font-size:.95rem;color:var(--ink)}
+.s5-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
+.s5-head h2{margin:0;font-size:1.35rem}
+.s5-tag{background:var(--tag);color:var(--tag-ink);font-weight:700;font-size:.78rem;padding:.1rem .5rem;border-radius:6px;white-space:nowrap}
+.s5-sheet p{margin:.4rem 0}
+.s5-sheet h3{margin:.6rem 0 .3rem;font-size:1rem}
+.s5-t{width:100%;border-collapse:collapse;font-size:.88rem;margin:.3rem 0}
+.s5-t th{text-align:left;background:color-mix(in srgb,var(--ink) 7%,transparent);padding:.35rem .5rem;font-weight:700}
+.s5-t td{padding:.32rem .5rem;border-top:1px solid var(--line);vertical-align:top}
+.s5-two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.s5-note{font-size:.85rem;color:var(--ink-2)}
+.s5-call{border-left:4px solid var(--tag);background:color-mix(in srgb,var(--tag) 12%,transparent);padding:.6rem .8rem;border-radius:0 8px 8px 0;font-size:1rem}
+.s5-sign{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.6rem;font-size:.85rem;color:var(--ink-2)}
+@media (max-width:700px){.s5-two{grid-template-columns:1fr}.s5-sheet{padding:.8rem}}

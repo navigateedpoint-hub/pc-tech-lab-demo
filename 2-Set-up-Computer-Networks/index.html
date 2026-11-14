@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set-up Computer Networks – PC Tech Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/player.css">
+<style>
+body{overflow:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:1.4rem 1rem 3rem}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:end;margin:1rem 0 1.6rem}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:.3rem 0 0}
+.hero .pill{display:inline-block;background:var(--tag);color:var(--tag-ink);font-weight:700;padding:.1rem .55rem;border-radius:6px}
+.hero p{font-size:1.1rem;color:var(--ink-2);margin:.3rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.st{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.st .pic{position:relative;aspect-ratio:16/10;background:radial-gradient(ellipse at 50% 35%,var(--stage-a) 0%,var(--stage-b) 90%);border-bottom:1px solid var(--line)}
+.st .pic svg{position:absolute;left:8%;top:8%;width:84%;height:84%}
+.st .num{position:absolute;left:.7rem;top:.7rem;background:var(--tag);color:var(--tag-ink);font-weight:700;padding:.05rem .55rem;border-radius:6px;z-index:1}
+.st .body{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.st h2{margin:0;font-size:1.25rem}
+.st details{font-size:.92rem}
+.st details a{text-decoration:none}
+.st ol{margin:.3rem 0 0;padding-left:1.3rem}
+.st .go{margin-top:auto;display:flex;gap:.5rem;flex-wrap:wrap}
+.how{margin-top:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.how .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.how h3{margin:0 0 .4rem}
+.foot{margin-top:2rem;font-size:.9rem;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div><span class="pill">PC Tech Lab · Guided demo</span><h1>Set-up Computer Networks</h1></div>
+    <div><p>Make and test network cables, then cable, address, secure and test a small office network, one step at a time.</p>
+      <p>The demo always points to the next thing to do, so nobody gets lost and no detail is skipped.</p></div>
+  </div>
+  <div class="grid" id="stations"></div>
+  <div class="how">
+    <div class="panel"><h3>Hands-on</h3><p>The learner clicks the highlighted spot to do each step. Nothing else on the screen reacts, so the order is always right.</p></div>
+    <div class="panel"><h3>Slides</h3><p>For teaching from the front. Press <kbd>→</kbd>, <kbd>Space</kbd> or a presentation clicker: the first press does the step, the next press moves on. <kbd>←</kbd> goes back.</p></div>
+    <div class="panel"><h3>Jump anywhere</h3><p>Pick a chapter from the menu at the top of a station. Each chapter starts exactly where the previous one ended. <kbd>F</kbd> gives full screen.</p></div>
+  </div>
+  <p class="foot"><a href="../index.html">← All PC Tech Lab categories</a> · Nothing is saved after you close the browser. Certificates can be saved as images at the end of each station. Classroom practice material, not a formal qualification.</p>
+</div>
+<script src="shared/art/core.js"></script>
+<script src="shared/art/net.js"></script>
+<script src="shared/art/pc.js"></script>
+<script src="shared/art/tools.js"></script>
+<script src="shared/art/mobo.js"></script>
+<script src="shared/art/detail.js"></script>
+<script>
+const ST=[
+ {n:3,href:'station3.html',title:'Cable Termination',art:'tool-crimper',tracks:[['straight','Straight-through (T568B)'],['crossover','Crossover (T568A / T568B)']],
+  ch:[['plan','Plan, measure and cut'],['strip','Strip the jacket'],['arrange','Untwist and arrange end A'],['insert','Trim and insert end A'],['crimp','Crimp end A'],['endb','Terminate end B'],['test','Test and label']]},
+ {n:4,href:'station4.html',title:'Network Setup',art:'router',state:{on:true},tracks:[['office','Small office network']],
+  ch:[['learn','Short lessons'],['physical','Cable the office'],['address','Addresses'],['wifi','Secure the Wi-Fi'],['testing','Test the network'],['document','Document and hand over']]},
+];
+const box=document.getElementById('stations');
+ST.forEach(s=>{
+  const t=(s.tracks||[[null]])[0][0];
+  const links=s.ch.map(([id,title])=>`<li><a href="${s.href}#${t?t+':':''}${id}">${title}</a></li>`).join('');
+  box.insertAdjacentHTML('beforeend',`<div class="st"><div class="pic"><span class="num">Station ${s.n}</span>${Art.svg(s.art,{state:s.state||{},cls:'notip'})}</div>
+   <div class="body"><h2>${s.title}</h2>${s.soon?'<p class="muted" style="color:var(--ink-2)">Being scripted.</p>':`<details><summary>${s.ch.length} chapters</summary><ol>${links}</ol></details>`}
+   <div class="go">${s.soon?'':`<a class="btn primary" href="${s.href}">Start ▶</a>`}${(s.tracks||[]).slice(1).map(([k,l])=>`<a class="btn small" href="${s.href}#${k}">${l}</a>`).join('')}</div></div></div>`);
+});
+</script>
+</body>
+</html>
